@@ -1,0 +1,14 @@
+.app {
+  text-align: center;
+}
+
+.header {
+  margin: 40px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin: auto;
+}

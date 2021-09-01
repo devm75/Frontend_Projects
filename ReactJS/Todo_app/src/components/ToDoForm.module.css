@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.input {
+  flex-grow: 1;
+}
+
+.addtask {
+  margin-left: 20px;
+}
