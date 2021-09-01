@@ -1,0 +1,263 @@
+body {
+  background-image: url("https://devm75.github.io/project2/fcc2.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: auto;
+}
+
+.header_1 {
+  color: white;
+  font-size: 200%;
+  text-align: center;
+  height: auto;
+  padding-bottom: 1rem;
+  padding-top: 3rem;
+  opacity: 1;
+  width: 100%;
+  letter-spacing: 1.5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header_2 {
+  color: white;
+  opacity: 1;
+  text-align: center;
+  width: auto;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+.container {
+  width: auto;
+  height: auto;
+}
+
+.menu {
+  margin: auto;
+
+  width: max-content;
+  background-color: rgb(43, 41, 74, 0.7);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  text-align: center;
+  border-radius: 5px;
+  letter-spacing: 1.5px;
+}
+
+.form-template1 {
+  margin-top: 30px;
+  margin-left: 8%;
+  margin-right: 8%;
+  text-align: left;
+  width: auto;
+  height: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+
+.form-template1 label {
+}
+
+.form-template1 input {
+  width: 100%;
+  background-color: white;
+  margin-top: 10px;
+  height: 35px;
+  border: 2px solid white;
+  border-radius: 5px;
+  opacity: 1;
+}
+
+.form-template2 {
+  width: auto;
+  height: auto;
+  margin-top: 30px;
+  margin-left: 8%;
+  margin-right: 8%;
+  text-align: left;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-template2 label {
+}
+
+.form-template2 input {
+  width: 100%;
+  background-color: white;
+  margin-top: 10px;
+  height: 35px;
+  border: 2px solid white;
+  border-radius: 5px;
+  opacity: 1;
+}
+
+.form-template3 {
+  width: auto;
+  height: auto;
+  margin-top: 30px;
+  margin-left: 8%;
+  margin-right: 8%;
+  text-align: left;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-template3 label {
+}
+
+.form-template3 input {
+  width: 100%;
+  background-color: white;
+  margin-top: 10px;
+  height: 35px;
+  border: 2px solid white;
+  border-radius: 5px;
+  opacity: 1;
+}
+
+#alpha {
+  font-size: smaller;
+}
+
+.form-template4 {
+  width: auto;
+  height: auto;
+  margin-top: 30px;
+  margin-left: 8%;
+  margin-right: 8%;
+  text-align: left;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-template4 label {
+}
+
+.form-template4 select {
+  width: 101%;
+  background-color: white;
+  margin-top: 10px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 5px;
+  opacity: 1;
+  color: gray;
+}
+
+.form-template5 {
+  width: auto;
+  height: auto;
+  margin-top: 30px;
+  margin-left: 8%;
+  margin-right: 8%;
+  text-align: left;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-template5 label {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.form-template-5 input {
+  margin-bottom: 20px;
+  opacity: 1;
+}
+
+.form-template5 #xyz {
+}
+
+.form-template6 {
+  width: auto;
+  height: auto;
+  margin-top: 30px;
+  margin-left: 8%;
+  margin-right: 8%;
+  text-align: left;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-template6 label {
+}
+
+.form-template6 select {
+  width: 101%;
+  background-color: white;
+  margin-top: 10px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 5px;
+  opacity: 1;
+  color: gray;
+}
+
+.form-template7 {
+  width: auto;
+  height: auto;
+  margin-top: 30px;
+  margin-left: 8%;
+  margin-right: 8%;
+  text-align: left;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-template8 {
+  width: auto;
+  height: auto;
+  text-align: left;
+  margin-left: 8%;
+  margin-right: 8%;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-template8 label {
+  padding-bottom: 10px;
+}
+
+.form-template8 textarea {
+  width: 100%;
+  height: 150px;
+  opacity: 1;
+  font-size: large;
+  text-align: center;
+}
+.form-template8::placeholder {
+  padding-left: 40px;
+}
+
+.form-template9 {
+  margin-top: 20px;
+  padding-bottom: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-template9 input {
+  background-color: rgb(66, 151, 66);
+  width: 85%;
+  height: 40px;
+  margin-left: 4%;
+  margin-right: 4%;
+  font-size: large;
+  color: white;
+  border: 2px solid rgb(66, 151, 66);
+  border-radius: 5px;
+  opacity: 1;
+}

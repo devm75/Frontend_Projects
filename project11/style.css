@@ -1,0 +1,228 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Spartan";
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+.container {
+ padding-top:8rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex:1
+}
+.row1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  flex: 1;
+}
+.row1-col1 {
+  min-height: fit-content;
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  min-width:500px;
+}
+.row1-col2 {
+  display: flex;
+  flex-direction: column;
+  min-height: fit-content;
+  flex: 0.5;
+}
+
+.row1-col1-heading {
+  flex: 0.5;
+  height: fit-content;
+  margin-bottom: 0.6rem;
+}
+.row1-col1-paragraph {
+  min-height: 50%;
+  flex: 0.5;
+  padding-right: 1rem;
+}
+
+.r1c1heading {
+  font-size: 3.2rem;
+  font-weight: 600;
+
+  color: hsl(300, 43%, 22%);
+}
+.r1c1paragraph {
+  font-size: 0.95rem;
+  line-height: 1.3rem;
+}
+.rating1 {
+  background-color: hsl(300, 24%, 96%);
+  height: fit-content;
+  width: fit-content;
+  padding: 1rem;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: fit-content;
+  justify-content: center;
+  align-content: center;
+  font-size: 0.8rem;
+  font-weight: bolder;
+  color: hsl(300, 43%, 22%);
+  border-radius: 7px;
+}
+
+.rating2 {
+  background-color: hsl(300, 24%, 96%);
+  height: fit-content;
+  width: fit-content;
+  padding: 1rem;
+  padding-right: 1rem;
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-weight: bolder;
+  color: hsl(300, 43%, 22%);
+  border-radius: 7px;
+}
+.rating3 {
+  background-color: hsl(300, 24%, 96%);
+  height: fit-content;
+  width: fit-content;
+  padding: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  margin-top: 1rem;
+  margin-left: 5.4rem;
+  font-size: 0.8rem;
+  font-weight: bolder;
+  color: hsl(300, 43%, 22%);
+  border-radius: 7px;
+}
+.star-icon-holder {
+  margin-right: 1rem;
+}
+
+.row2 {
+  width: 100vw;
+  height: fit-content;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex: 1;
+}
+.testimonial1 {
+  flex: 0.25;
+  background-color: hsl(300, 43%, 22%);
+  color: white;
+  border-radius: 7px;
+  padding: 0.7rem;
+}
+.testimonial2 {
+  flex: 0.25;
+  background-color: hsl(300, 43%, 22%);
+  color: white;
+  margin-top: 2rem;
+  border-radius: 7px;
+  padding: 0.7rem;
+}
+
+.testimonial3 {
+  flex: 0.25;
+  background-color: hsl(300, 43%, 22%);
+  color: white;
+  margin-top: 4rem;
+  border-radius: 7px;
+  padding: 0.7rem;
+}
+
+.testimonial-inner-container {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 1rem;
+}
+.user-info {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  height: fit-content;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1rem 9rem;
+  column-gap: 1rem;
+}
+.user-icon {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 0;
+  grid-column-end: 1;
+}
+.user-review {
+  grid-row-start: 0;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  font-size: 0.7rem;
+  opacity: 0.8;
+  line-height: 1.3rem;
+  padding-top: 1rem;
+}
+.image {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 100%;
+  margin-top: 0.4rem;
+}
+
+.user-name {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  font-size: 0.7rem;
+  margin-top: 0.6rem;
+  height: fit-content;
+}
+.user-cred {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  color: hsl(300, 32%, 61%);
+  font-size: 0.7rem;
+  height: 1rem;
+  opacity: 0.9;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+}
+
+@media only screen and (min-width:1170px){
+
+}

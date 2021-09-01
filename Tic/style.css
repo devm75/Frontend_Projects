@@ -1,0 +1,76 @@
+.outer-container {
+  display: flex;
+
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.game-heading {
+  font-size: 60px;
+  text-align: center;
+}
+
+.select-player {
+  color: #9352cf;
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.inner-container {
+  display: grid;
+  grid-template-rows: repeat(3, 120px);
+  grid-template-columns: repeat(3, 120px);
+  margin: auto;
+}
+.inner-container:hover {
+  cursor: pointer;
+}
+.select-player-circle,.select-player-cross {
+  font-size: 50px;
+}
+
+.select-player-cross:hover {
+  cursor: pointer;
+}
+
+.select-player-circle:hover {
+  cursor: pointer;
+}
+
+.box-1,.box-2,.box-4,.box-5{
+  border-right: 5px solid black;
+  border-bottom: 5px solid black;
+}
+
+.box-7,.box-8{
+  border-right: 5px solid black;
+}
+
+
+.box-3,.box-6 {
+  border-bottom: 5px solid black;
+}
+
+
+
+.fa-times {
+  font-size: 110px;
+  text-align: center;
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+.fa-circle {
+  font-size: 100px;
+  padding-left: 8px;
+  padding-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+.winner-declaration,.losing-declaration {
+  font-size: 70px;
+  color: #9352cf;
+}
+

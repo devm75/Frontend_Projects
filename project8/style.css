@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: fit-content;
+  background-color: hsl(238, 23%, 21%);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(41, 41, 88, 0.767),
+    rgba(41, 42, 66, 0.74)
+  );
+  background-image: url(images/bg-stars.svg);
+}
+.header {
+  width: 100vw;
+  text-align: center;
+  color: white;
+  padding-top: 12rem;
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  word-spacing: 1rem;
+  letter-spacing: 0.6rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  height: auto;
+  margin-top: 7rem;
+  flex: 1;
+}
+
+.days {
+  margin-right: 1rem;
+  padding: 1rem;
+  flex: 0.12;
+}
+.hours {
+  margin-right: 1rem;
+  padding: 1rem;
+  flex: 0.12;
+}
+.minutes {
+  margin-right: 1rem;
+  padding: 1rem;
+  flex: 0.12;
+}
+.seconds {
+  margin-right: 1rem;
+  padding: 1rem;
+  flex: 0.12;
+}
+
+.days-timer,
+.hours-timer,
+.minutes-timer,
+.seconds-timer {
+  font-size: 8rem;
+  color: hsl(345, 95%, 68%);
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: bolder;
+  background-color: hsl(240, 45%, 26%);
+  margin-bottom: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 0.3rem;
+  padding-bottom: 1.8rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-top: 1.8rem;
+  transition-duration: 0.9s;
+  transition-delay: 0s;
+  transform-style: preserve-3d;
+}
+
+.days-caption-text,
+.hours-caption-text,
+.minutes-caption-text,
+.seconds-caption-text {
+  color: white;
+  font-size: 1.4rem;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0.4;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 10rem;
+  position: relative;
+}
+
+.icon1,
+.icon2,
+.icon3:hover {
+  cursor: pointer;
+}
+.mountain {
+  width: 100vw;
+}
+.mountains {
+  box-sizing: border-box;
+}
+.mountain-image {
+  width: 100%;
+}
+.icons {
+  position: absolute;
+  top: calc(50% - translateY('-50%)'));
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}

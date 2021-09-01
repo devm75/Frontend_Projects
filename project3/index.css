@@ -1,0 +1,331 @@
+* {
+  margin: 0;
+}
+
+.html {
+  font-size: 62.5%;
+}
+body {
+  background-color: rgb(238, 238, 238);
+}
+a {
+  text-decoration: none;
+  color: rgb(30, 31, 38);
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  background-color: rgb(221,221,221);
+  color:black;
+  margin-bottom:7rem;
+  align-content:center;
+}
+.header-image {
+  display: flex;
+  justify-content: center;
+  height: 3rem;
+  margin-top: 1.2rem;
+  flex: 0.5;
+}
+.header-text {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  display: flex;
+  flex: auto;
+  
+  justify-content: flex-start;
+  font-size: 1.3rem;
+  padding-top: 1.2rem;
+}
+
+.header-empty-space {
+  flex: 4;
+}
+.header-link1 {
+  display: flex;
+  justify-content: center;
+  flex: auto;
+  font-size: 1.3rem;
+  max-height: min-content;
+  padding-top:1.2rem;
+
+}
+
+.navlink{
+  
+  font-family:"Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.navlink:hover{
+    background-color: rgb(241, 196, 15);
+    cursor: hand;
+}
+
+.header-link2 {
+  display: flex;
+  justify-content: center;
+  flex: auto;
+  font-size: 1.3rem;
+  flex-wrap: wrap;
+  padding-top: 1.2rem;
+}
+
+.header-link3 {
+  display: flex;
+  justify-content: center;
+  flex: auto;
+  font-size: 1.3rem;
+  padding-top: 1.2rem;
+
+}
+
+.main-text {
+  text-align: center;
+  font-size: larger;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    margin-bottom:2rem;
+}
+
+.email-box input {
+  margin-top: 1rem;
+  width: 15rem;
+  height: 1.2rem;
+  
+}
+.email-box {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: larger;
+}
+
+.email-submit-button {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  margin-bottom:2rem;
+}
+.email-submit-button :hover{
+    background-color: #FF8C00;
+}
+.email-submit-button input {
+  background-color: rgb(241, 196, 15);
+  height: 1.7rem;
+  width: 8rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+
+.main-content1 {
+  display: flex;
+
+}
+.logo1 {
+  flex: 0.4;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 4rem;
+  color: rgb(255, 167, 2);
+  margin-top: 1rem;
+}
+
+.text1 p{
+
+    font-size: large;
+}
+.text2 p{
+font-size:large;
+}
+.text3 p{
+    font-size: large;
+}
+.text1 {
+  flex: 1;
+}
+.main-content1 h1 {
+  margin-top: 3rem;
+  margin-bottom: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-block-end: 0;
+}
+
+.main-content1 p {
+  margin-top: 1;
+  margin-block-start: 0;
+  margin-bottom: 2rem;
+}
+
+.main-content2 h1 {
+  margin-bottom: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-block-end: 0;
+  margin-top: 2rem;
+}
+
+.main-content2 p {
+  margin: 0;
+  margin-block-start: 0;
+}
+
+i {
+  font-size: 3.5rem;
+
+}
+
+.main-content2 {
+  display: flex;
+  margin-bottom:1.5rem;
+}
+
+.logo2 {
+  flex: 0.4;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 4rem;
+  color: rgb(255, 168, 6);
+}
+
+.text2 {
+  flex: 1;
+}
+
+.main-content3 {
+  display: flex;
+}
+.logo3 {
+  flex: 0.4;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 4rem;
+  color: rgb(255, 172, 17);
+}
+
+.text3 {
+  flex: 1;
+}
+.main-content3 h1 {
+  margin-bottom: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-top: 2rem;
+}
+
+.main-content3 p {
+  margin: 0;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom:4rem;
+}
+
+iframe {
+  margin-top: 3rem;
+  height: 18rem;
+  width: 32rem;
+}
+
+.items {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  height: auto;
+}
+.h3 {
+  background-color: #dddddd;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.items h1 {
+  padding-top: 1rem;
+}
+.item1 {
+  border: 1px solid black;
+  flex:0.17;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+.item1 p {
+  line-height: 2rem;
+}
+
+.item2 {
+  border: 1px solid black;
+flex:0.17;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+.item2 p {
+  line-height: 2rem;
+}
+
+.item3 {
+  border: 1px solid black;
+flex:0.17;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+.item3 p {
+  line-height: 2rem;
+}
+.footer-container {
+  display: flex;
+  padding-top: 2rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width:auto;
+  margin-left:22vw;
+  margin-right:22vw;
+}
+
+
+.footer {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+  background-color: rgb(221, 221, 221);
+}
+
+
+.footertop {
+  padding-top: 1rem;
+  padding-right: 1rem;
+  font-size: 1.2rem;
+}
+.footerbottom {
+  padding-top: 1rem;
+  padding-right: 1rem;
+  color: rgba(22, 20, 20, 0.829);
+  padding-bottom: 1rem;
+}
+
+.button {
+  background-color: #f1c40f;
+  width: 5rem;
+  height: 2rem;
+  border: none;
+  font-size: medium;
+  margin-top: 1rem;
+  cursor: pointer;
+
+}
+.button:hover{
+background-color: #FF8C00;
+}

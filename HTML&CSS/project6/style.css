@@ -1,0 +1,114 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  background-color: hsl(185, 75%, 39%);
+  width: 100%;
+  height: calc(100vh - 15px);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.content-box {
+  margin: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: "Kumbh Sans", sans-serif;
+}
+.top-part {
+  background-color: hsl(185, 99%, 45%);
+  width: 18rem;
+  height: 8rem;
+  position: relative;
+  border-top-left-radius: 0.6rem;
+
+  border-top-right-radius: 0.6rem;
+}
+.floating-image {
+  position: absolute;
+  top: calc(100% - 48px);
+  left: calc(50% - 48px);
+  padding: 0;
+  margin: 0;
+}
+#image {
+  border: 5px solid white;
+  border-radius: 50%;
+}
+
+.middle-part {
+  background-color: white;
+  padding-top: 4rem;
+  text-align: center;
+  padding-bottom: 1.2rem;
+  height: auto;
+}
+
+.bottom-part {
+  border-top: 2px solid rgb(219, 217, 217);
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  height: 4rem;
+  justify-content: space-evenly;
+  align-content: center;
+  gap: 0.6rem;
+  text-align: center;
+  align-items: center;
+  background-color: white;
+  border-bottom-left-radius: 0.6rem;
+  border-bottom-right-radius: 0.6rem;
+}
+
+.bottom-part-leftmost {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.bottom-part-middle {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.bottom-part-right-most {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.bolder-text {
+  font-weight: 700;
+  opacity: 0.9;
+}
+.lighter-text {
+  font-weight: 400;
+  font-size: 0.5rem;
+  letter-spacing: 0.1rem;
+  opacity: 0.6;
+}
+
+#name {
+  font-weight: 700;
+}
+#age {
+  opacity: 0.6;
+}
+#place {
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  background-color: rgb(216, 201, 201);
+  height:15px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
