@@ -1,1 +1,1 @@
-### A tribute page dedicated to Dr. Norman Borloug 
+### A Responsive tribute page dedicated to Dr. Norman Borloug using HTML and CSS
