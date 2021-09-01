@@ -12,3 +12,4 @@
 2. FAQ Accordian  ([Live](https://devm75.github.io/Frontend_Projects/VanillaJS/FAQ_accordian)/[code](https://github.com/devm75/Frontend_Projects/tree/main/VanillaJS/FAQ_accordian))
 3. CountDown Timer ([Live](https://devm75.github.io/Frontend_Projects/VanillaJS/Countdown_timer)/[code](https://github.com/devm75/Frontend_Projects/tree/main/VanillaJS/Countdown_timer))
 4. Todo App ([Live](https://devm75.github.io/Frontend_Projects/VanillaJS/Todo_app)/[code](https://github.com/devm75/Frontend_Projects/tree/main/VanillaJS/Todo_app))
+5. Tic Tac Toe Game ([Live](https://devm75.github.io/Frontend_Projects/VanillaJS/Tic_tac_toe_game)/[code](https://github.com/devm75/Frontend_Projects/tree/main/VanillaJS/Tic_tac_toe_game))
