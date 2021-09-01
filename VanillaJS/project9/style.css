@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Josefin Sans", sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+}
+.container {
+  background-color: hsl(235, 21%, 11%);
+  height: calc(100vh - 15px);
+  width: 100vw;
+  position: relative;
+}
+.image {
+  width: 100%;
+}
+
+.todoApp {
+  width: fit-content;
+  height: auto;
+  position: absolute;
+  top:10%;
+  margin-left:30%;
+  margin-right:20%;
+}
+.header {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 5rem;
+}
+.sun {
+  margin-left: 24rem;
+  cursor: pointer;
+}
+.moon {
+  margin-left: 24rem;
+  cursor: pointer;
+}
+
+.content1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+  border: 1px solid hsl(233, 7%, 24%);
+  margin-bottom: 2rem;
+  background-color:  hsl(235, 24%, 19%);
+}
+
+#input-text {
+  color: rgb(209, 168, 168);
+  background-color: hsl(235, 24%, 19%);
+  border: none;
+  width:100%;
+  height: 4rem;
+  font-size: 2rem;
+  outline: none;
+}
+#radiomain {
+  size: 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+#radio {
+  size: 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.content {
+  width: 100%;
+  height: 3rem;
+  font-size: 1.4rem;
+  color: rgb(209, 168, 168);
+  background-color: hsl(235, 24%, 19%);
+  margin: auto;
+  box-sizing: content-box;
+  border-bottom: 1px solid hsla(240, 2%, 34%, 0.726);
+  align-content: center;
+  text-align: start;
+  padding-top: 1.5rem;
+}
+.footer {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  color: white;
+  padding: auto;
+  height: 3rem;
+}
+#itemsleft,
+#completed,
+#active,
+#clearcompleted,
+#all {
+  cursor: pointer;
+  opacity:0.6;
+
+}
+#itemsleft:hover{
+  opacity:1;
+}
+
+#completed:hover{
+  opacity:1;
+}
+
+#active:hover{
+opacity:1;
+
+}
+#clearcompleted:hover{
+  opacity:1;
+}
+#all:hover{
+  opacity:1;
+}
+.hide{
+  display:none;
+}

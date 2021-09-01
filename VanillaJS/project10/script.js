@@ -1,164 +1,238 @@
-let count=0;
-let k=0;
-const radioMain = document.getElementById("radiomain");
-const checkuncheck = function () {
-  document.getElementById("radiomain").checked = true;
-  setTimeout(() => {
-    document.getElementById("radiomain").checked = false;
-  }, 100);
-};
-const inputText = document.querySelector("#input-text");
-inputText.addEventListener("keydown", function (e) {
-  if (e.key === "Enter") {
-    radioMain.click();
-  }
-});
-radioMain.addEventListener("click", function () {
-  let todoitem = document.getElementById("input-text").value;
-  if (todoitem == "") {
-    return;
-  }
-  count++;
-  document.getElementById("input-text").value = "";
-  document
-    .querySelector(".content1")
-    .insertAdjacentHTML(
-      "afterend",
-      `<div class="content active uncomplete"><input id="radio" type="radio"><span id="content-text">${todoitem}</span>
-       </div>`
-    );
-    k=   document.querySelectorAll('.uncomplete').length;
-    document.querySelector('#num').textContent= Number(k);
+const playerCross = document.querySelector(".select-player-cross");
+const playerCircle = document.querySelector(".select-player-circle");
+const CircleBackgroundColor = playerCircle.style.backgroundColor;
+const CrossBackgroundColor = playerCircle.style.backgroundColor;
+const blocks = document.querySelector(".inner-container");
 
-  //--------  complemented elements let line passing through themselves------//
-  if(count>=1){
-    document.querySelectorAll('#radio').forEach(el=>el.addEventListener('click',function(){
-    el.parentElement.querySelector('#content-text').style.textDecorationLine ="line-through";
-    el.parentElement.classList.add('complete');
-    el.parentElement.classList.remove('active');
-    el.parentElement.classList.remove('uncomplete');
-  
-    //el.closest('#content').textContent.style.textDecortionLine="line-through";
-    k=   document.querySelectorAll('.uncomplete').length;
-    document.querySelector('#num').textContent= Number(k);
+let filledBlocks = new Set();
+let emptyBlocks = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+let occupiedByCross = new Set();
+let occupiedByCircle = new Set();
+let arreyOccupiedByCross;
+let arreyOccupiedByCircle;
+const dark = "rgb(35, 83, 207)";
+const light = "";
+let signalCross;
+let signalCircle;
+
+
+const blockManagement= function(x){
+  occupiedByCross.add(x);
+  emptyBlocks.delete(x);
+  filledBlocks.add(x);
+}
+
+const checkDraw = function () {
+  if (emptyBlocks.size === 0) {
+    document.querySelectorAll(".element").forEach(function (el) {
+      el.classList.add("hidden");
+    });
+    playerCircle.style.backgroundColor = "";
+    playerCross.style.backgroundColor = "";
+    document.querySelector(".no-result").classList.remove("hidden");
+  }
+};
+
+const winAlgo = function (x) {
+  if (
+    (x.has(1) && x.has(2) && x.has(3)) ||
+    (x.has(4) && x.has(5) && x.has(6)) ||
+    (x.has(7) && x.has(8) && x.has(9)) ||
+    (x.has(1) && x.has(5) && x.has(9)) ||
+    (x.has(3) && x.has(5) && x.has(7)) ||
+    (x.has(1) && x.has(4) && x.has(7)) ||
+    (x.has(2) && x.has(5) && x.has(8)) ||
+    (x.has(3) && x.has(6) && x.has(9)) ||
+    (x.has(7) && x.has(8) && x.has(9))
+  )
+    return true;
+  else false;
+};
+
+//  Selecting player
+
+playerCross.addEventListener("click", function () {
+  playerCircle.style.backgroundColor = "";
+  playerCross.style.backgroundColor = "#2353cf";
+});
+
+playerCircle.addEventListener("click", function () {
+  playerCross.style.backgroundColor = "";
+  playerCircle.style.backgroundColor = "#2353cf";
+});
+
+// Game begins
+
+blocks.addEventListener("click", function (e) {
+  if(!e.target.querySelector(".element").classList.contains("hidden"))
+  return;
+  else if (e.target.querySelector(".element").classList.contains("hidden")) {
+
+    // If player Selected is Cross
+
+
+       if (playerCross.style.backgroundColor === dark) {
+      e.target.querySelector(".element").classList.remove("fa-circle");
+      e.target.querySelector(".hidden").classList.remove("hidden");
+
+      const name = e.target.className;
+
+      let blockFilled = Number(name.substr(name.length - 1));
+       blockManagement(blockFilled);
     
 
+      let arrayedEmptyBlocks = Array.from(emptyBlocks);
 
-    }));
-  
+      const randomFill =
+        arrayedEmptyBlocks[
+          Math.floor(Math.random() * arrayedEmptyBlocks.length)
+        ];
+
+      // win logic for person playing
+
+      arreyOccupiedByCross = Array.from(occupiedByCross);
+
+      if (arreyOccupiedByCross.length >= 3) {
+        const sortedArreyOccupiedByCross = arreyOccupiedByCross.sort();
+        let arr = sortedArreyOccupiedByCross;
+        let sortedArreydaSet = new Set(arr);
+        let setOccupied = sortedArreydaSet;
+
+        if (winAlgo(setOccupied)) {
+          signalCross = true;
+
+          document.querySelectorAll(".element").forEach(function (el) {
+            el.classList.add("hidden");
+          });
+          document
+            .querySelector(".winner-declaration")
+            .classList.remove("hidden");
+        }
+        if (emptyBlocks.size === 0) {
+          document.querySelectorAll(".element").forEach(function (el) {
+            el.classList.add("hidden");
+          });
+          playerCircle.style.backgroundColor = "";
+          playerCross.style.backgroundColor = "";
+          document.querySelector(".noresult").classList.remove("hidden");
+        }
+        checkDraw();
+      }
+
+      // computer player turn
+
+      if (!signalCross) {
+        const pcTurn = e.target.parentElement.querySelector(
+          `.box-${randomFill}`
+        );
+
+        pcTurn.querySelector(".element").classList.remove("fa-times");
+        pcTurn.querySelector(".hidden").classList.remove("hidden");
+       
+        
+        filledBlocks.add(randomFill);
+        occupiedByCircle.add(randomFill);
+        emptyBlocks.delete(randomFill);
+
+        // Win Logic for computer player
+
+        arreyOccupiedByCircle = Array.from(occupiedByCircle);
+
+        if (arreyOccupiedByCircle.length >= 3) {
+          const sortedArreyOccupiedByCircle = arreyOccupiedByCircle.sort();
+
+          let arr = sortedArreyOccupiedByCircle;
+          let sortedArreydaSet = new Set(arr);
+          let setOccupied = sortedArreydaSet;
+
+          if (winAlgo(setOccupied)) {
+            document.querySelectorAll(".element").forEach(function (el) {
+              el.classList.add("hidden");
+            });
+            document
+              .querySelector(".losing-declaration")
+              .classList.remove("hidden");
+          }
+        }
+      }
+    }
   }
 
-//---removing completed tasks----//
-document.querySelector('#clearcompleted').addEventListener('click',function(e){
-  document.querySelectorAll('.complete').forEach(el=>el.remove());
-})
+  // If player selected is Circle
 
-//----------items left-----------------//
- 
+  if (playerCircle.style.backgroundColor === dark) {
+    e.target.querySelector(".element").classList.remove("fa-times");
+    e.target.querySelector(".hidden").classList.remove("hidden");
 
 
 
-//------theme oriented changes---------//
-  if (document.querySelector(".sun").classList.contains("moon")) {
-    document.querySelectorAll(".content").forEach((el) => {
-      el.style.backgroundColor = "white";
-      el.style.color = "black";
-    });
+
+    const name = e.target.className;
+    let blockFilled = Number(name.substr(name.length - 1));
+  //  blockManagement(blockFilled);
+  
+      occupiedByCircle.add(blockFilled);
+      emptyBlocks.delete(blockFilled);
+      filledBlocks.add(blockFilled);
+    
+
+    // Human Win Logic
+
+    arreyOccupiedByCircle = Array.from(occupiedByCircle);
+
+    if (arreyOccupiedByCircle.length >= 3) {
+      const sortedArreyOccupiedByCircle = arreyOccupiedByCircle.sort();
+
+      let arr = sortedArreyOccupiedByCircle;
+      let sortedArreydaSet = new Set(arr);
+      let setOccupied = sortedArreydaSet;
+      if (winAlgo(setOccupied)) {
+        signalCircle = true;
+        document.querySelectorAll(".element").forEach(function (el) {
+          el.classList.add("hidden");
+        });
+        document.querySelector(".winner-declaration").classList.remove("hidden");
+        return;
+      }
+      checkDraw();
+    }
+
+    //Computer  Turn
+
+    if (!signalCircle) {
+      let arrayedEmptyBlocks = Array.from(emptyBlocks);
+      const randomFill =
+        arrayedEmptyBlocks[
+          Math.floor(Math.random() * arrayedEmptyBlocks.length)
+        ];
+
+      const pcTurn = e.target.parentElement.querySelector(`.box-${randomFill}`);
+      pcTurn.querySelector(".element").classList.remove("fa-circle");
+      pcTurn.querySelector(".hidden").classList.remove("hidden");
+
+      filledBlocks.add(randomFill);
+      occupiedByCross.add(randomFill);
+      emptyBlocks.delete(randomFill);
+
+      // Win Logic for computer player
+
+      arreyOccupiedByCross = Array.from(occupiedByCross);
+
+      if (arreyOccupiedByCross.length >= 3) {
+        const sortedArreyOccupiedByCross = arreyOccupiedByCross.sort();
+        let arr = sortedArreyOccupiedByCross;
+        let sortedArreydaSet = new Set(arr);
+        let setOccupied = sortedArreydaSet;
+        if (winAlgo(setOccupied)) {
+          document.querySelectorAll(".element").forEach(function (el) {
+            el.classList.add("hidden");
+          });
+          document
+            .querySelector(".losing-declaration")
+            .classList.remove("hidden");
+          return;
+        }
+      }
+    }
   }
 });
-
-//-----------Imlementing theme change -------------------//
-document.querySelector(".sun").addEventListener("click", function () {
-  if (document.querySelector(".sun").classList.contains("moon")) {
-    // console.log('hi');
-    document.querySelector(".container").style.backgroundColor =
-      "rgb(22,23,34)";
-    document.querySelector(".image").removeAttribute("src");
-    document
-      .querySelector(".image")
-      .setAttribute("src", "images/bg-desktop-dark.jpg");
-    document.querySelector(".sun").removeAttribute("src");
-    console.log("hi");
-    document.querySelector(".sun").setAttribute("src", "images/icon-sun.svg");
-    document.querySelector(".sun").classList.remove("moon");
-
-    document.getElementById("all").style.color = "white";
-    document.getElementById("itemsleft").style.color = "white";
-    document.getElementById("active").style.color = "white";
-    document.getElementById("completed").style.color = "white";
-    document.getElementById("clearcompleted").style.color = "white";
-    document.querySelector(".content1").style.backgroundColor = "rgb(37,39,60)";
-    document.getElementById("input-text").style.backgroundColor =
-      "rgb(37,39,60)";
-    document.querySelectorAll(".content").forEach((el) => {
-      el.style.backgroundColor = "rgb(37,39,60)";
-      el.style.color = "rgb(209, 168, 168)";
-    });
-    return;
-  }
-  // console.log("hi");
-  const container = document.querySelector(".container");
-  // console.log(container);
-  document.querySelector(".container").style.backgroundColor = "white";
-  document.querySelector(".image").removeAttribute("src");
-  document
-    .querySelector(".image")
-    .setAttribute("src", "images/bg-desktop-light.jpg");
-  document.querySelector(".sun").removeAttribute("src");
-  document.querySelector(".sun").removeAttribute("src");
-  document.querySelector(".sun").setAttribute("src", "images/icon-moon.svg");
-  document.querySelector(".sun").classList.add("moon");
-
-  document.getElementById("all").style.color = "black";
-  document.getElementById("itemsleft").style.color = "black";
-  document.getElementById("active").style.color = "black";
-  document.getElementById("completed").style.color = "black";
-  document.getElementById("clearcompleted").style.color = "black";
-  document.querySelector(".content1").style.backgroundColor = "white";
-  document.getElementById("input-text").style.backgroundColor = "white";
-  document.querySelectorAll(".content").forEach((el) => {
-    el.style.backgroundColor = "white";
-    el.style.color = "black";
-  });
-  //document.querySelector(".moon").classList.remove("sun");
-//--showing Items left------//
-
-  
-
-})
-
-
-
-
-
-
-
-//--Showing completed tasks-----//
-document.querySelector('#completed').addEventListener('click',function(e){
-document.querySelectorAll('.content').forEach(el=>{
-  el.classList.remove('hide');
-  if(el.classList.contains('uncomplete')){el.classList.add('hide');}
-})
-})
-
-
-//--Showing all tasks-------//
-document.querySelector('#all').addEventListener('click',function(e){
-  console.log('hello');
-  document.querySelectorAll('.content').forEach(el=>{
-    el.classList.remove('hide');
-  })
-
-});
-
-  
-//--showing Active items------//
-document.querySelector('#active').addEventListener('click',function(){
-  document.querySelectorAll('.content').forEach(el=>{
-    el.classList.remove('hide');
-    if(el.classList.contains('complete')){
-      el.classList.add('hide');
-    }})
-})
-
-

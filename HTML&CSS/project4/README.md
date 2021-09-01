@@ -1,1 +1,1 @@
-### Simple Javascript Documentation Page
+### Profile Card Component

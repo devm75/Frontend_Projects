@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Todo app</title>
+
+  
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="backgroundimage-dark">
+      <img class="image" src="images/bg-desktop-dark.jpg" alt="" />
+    </div>
+    <div class="todoApp">
+      <div class="header">
+        <span>TODO</span><img class="sun" src="images/icon-sun.svg" alt="" />
+      </div>
+      <div class="content1">
+        <input id="radiomain" type="radio" onclick="checkuncheck()" /><input id="input-text" type="text"
+          placeholder="Create a new todo..." onfocus="this.placeholder=''"
+          onblur="this.placeholder='Create a new todo...'" />
+      </div>
+      <div class="footer">
+        <span id="itemsleft"><span id="num">&nbsp;</span>Items Left</span>
+        <span id="all">All</span>
+        <span id="active">Active</span>
+        <span id="completed">Completed</span>
+        <span id="clearcompleted">Clear Completed</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+      href="#">Mohan Dev</a>.
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
