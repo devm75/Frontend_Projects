@@ -29,11 +29,11 @@
   margin-right: 20%;
 }
 
-@media only screen and (max-width: 880px) {
-  .todoApp {
-    margin-left: 20vw;
-  }
-}
+
+
+
+
+
 
 .header {
   font-size: 3rem;
@@ -56,7 +56,7 @@
   cursor: pointer;
 }
 .moon {
-  margin-left: 24rem;
+  margin-left: 17vw;
   cursor: pointer;
 }
 
@@ -142,4 +142,34 @@
 }
 .hide {
   display: none;
+}
+
+
+@media only screen and (max-width: 880px) {
+  .todoApp {
+    margin-left: 20vw;
+  }
+}
+
+@media only screen and (max-width:465px){
+
+  .header{
+    font-size: 2rem;
+    letter-spacing:0.1rem;
+
+  }
+  .todoApp{
+    margin-left:5%;
+
+  }
+
+  .footer{
+    font-size: 1rem;
+  }
+  .input-text{
+    font-size:1rem;
+  }
+  .sun,.moon{
+    margin-left:30vw;
+  }
 }
