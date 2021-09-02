@@ -1,1 +1,1 @@
-### A simple web page respresenting the visiting page of a site selling trombones!!
+### A simple web page respresenting the visiting page of a company selling trombones!!
