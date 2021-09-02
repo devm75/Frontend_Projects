@@ -64,7 +64,9 @@ radioMain.addEventListener("click", function () {
   }
 });
 
-//-----------Imlementing theme change -------------------//
+//-----------Imlementing theme changes -------------------//
+
+//---------- from  dark to light  -----------//
 
 document.querySelector(".sun").addEventListener("click", function () {
   if (document.querySelector(".sun").classList.contains("moon")) {
@@ -75,10 +77,8 @@ document.querySelector(".sun").addEventListener("click", function () {
       .querySelector(".image")
       .setAttribute("src", "images/bg-desktop-dark.jpg");
     document.querySelector(".sun").removeAttribute("src");
-    console.log("hi");
     document.querySelector(".sun").setAttribute("src", "images/icon-sun.svg");
     document.querySelector(".sun").classList.remove("moon");
-
     document.getElementById("all").style.color = "white";
     document.getElementById("itemsleft").style.color = "white";
     document.getElementById("active").style.color = "white";
@@ -91,8 +91,9 @@ document.querySelector(".sun").addEventListener("click", function () {
       el.style.backgroundColor = "rgb(37,39,60)";
       el.style.color = "rgb(209, 168, 168)";
     });
-    return;
+return
   }
+//----------from  light to dark----//
 
   const container = document.querySelector(".container");
 
