@@ -3,6 +3,8 @@ const playerCircle = document.querySelector(".select-player-circle");
 const CircleBackgroundColor = playerCircle.style.backgroundColor;
 const CrossBackgroundColor = playerCircle.style.backgroundColor;
 const blocks = document.querySelector(".inner-container");
+const innerContainer = document.querySelector(".inner-container");
+const selectPlayer = document.querySelector(".select-player");
 
 let filledBlocks = new Set();
 let emptyBlocks = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
@@ -15,21 +17,17 @@ const light = "";
 let signalCross;
 let signalCircle;
 
-
-const blockManagement= function(x){
-  occupiedByCross.add(x);
-  emptyBlocks.delete(x);
-  filledBlocks.add(x);
-}
-
 const checkDraw = function () {
   if (emptyBlocks.size === 0) {
     document.querySelectorAll(".element").forEach(function (el) {
       el.classList.add("hidden");
     });
+    document.querySelector(".no-result").classList.remove("hidden");
+    innerContainer.classList.add("hidden");
+
     playerCircle.style.backgroundColor = "";
     playerCross.style.backgroundColor = "";
-    document.querySelector(".no-result").classList.remove("hidden");
+    selectPlayer.classList.add("hidden");
   }
 };
 
@@ -64,22 +62,20 @@ playerCircle.addEventListener("click", function () {
 // Game begins
 
 blocks.addEventListener("click", function (e) {
-  if(!e.target.querySelector(".element").classList.contains("hidden"))
-  return;
+  if (!e.target.querySelector(".element").classList.contains("hidden")) return;
   else if (e.target.querySelector(".element").classList.contains("hidden")) {
-
     // If player Selected is Cross
 
-
-       if (playerCross.style.backgroundColor === dark) {
+    if (playerCross.style.backgroundColor === dark) {
       e.target.querySelector(".element").classList.remove("fa-circle");
       e.target.querySelector(".hidden").classList.remove("hidden");
 
       const name = e.target.className;
 
       let blockFilled = Number(name.substr(name.length - 1));
-       blockManagement(blockFilled);
-    
+      occupiedByCross.add(blockFilled);
+      emptyBlocks.delete(blockFilled);
+      filledBlocks.add(blockFilled);
 
       let arrayedEmptyBlocks = Array.from(emptyBlocks);
 
@@ -100,23 +96,16 @@ blocks.addEventListener("click", function (e) {
 
         if (winAlgo(setOccupied)) {
           signalCross = true;
-
+          innerContainer.classList.add("hidden");
           document.querySelectorAll(".element").forEach(function (el) {
             el.classList.add("hidden");
           });
           document
             .querySelector(".winner-declaration")
             .classList.remove("hidden");
-        }
-        if (emptyBlocks.size === 0) {
-          document.querySelectorAll(".element").forEach(function (el) {
-            el.classList.add("hidden");
-          });
-          playerCircle.style.backgroundColor = "";
-          playerCross.style.backgroundColor = "";
-          document.querySelector(".noresult").classList.remove("hidden");
-        }
-        checkDraw();
+          innerContainer.classList.add("hidden");
+          selectPlayer.classList.add("hidden");
+        } else checkDraw();
       }
 
       // computer player turn
@@ -128,8 +117,7 @@ blocks.addEventListener("click", function (e) {
 
         pcTurn.querySelector(".element").classList.remove("fa-times");
         pcTurn.querySelector(".hidden").classList.remove("hidden");
-       
-        
+
         filledBlocks.add(randomFill);
         occupiedByCircle.add(randomFill);
         emptyBlocks.delete(randomFill);
@@ -152,7 +140,9 @@ blocks.addEventListener("click", function (e) {
             document
               .querySelector(".losing-declaration")
               .classList.remove("hidden");
-          }
+            innerContainer.classList.add("hidden");
+            selectPlayer.classList.add("hidden");
+          } else checkDraw();
         }
       }
     }
@@ -164,17 +154,11 @@ blocks.addEventListener("click", function (e) {
     e.target.querySelector(".element").classList.remove("fa-times");
     e.target.querySelector(".hidden").classList.remove("hidden");
 
-
-
-
     const name = e.target.className;
     let blockFilled = Number(name.substr(name.length - 1));
-  //  blockManagement(blockFilled);
-  
-      occupiedByCircle.add(blockFilled);
-      emptyBlocks.delete(blockFilled);
-      filledBlocks.add(blockFilled);
-    
+    occupiedByCircle.add(blockFilled);
+    emptyBlocks.delete(blockFilled);
+    filledBlocks.add(blockFilled);
 
     // Human Win Logic
 
@@ -191,10 +175,12 @@ blocks.addEventListener("click", function (e) {
         document.querySelectorAll(".element").forEach(function (el) {
           el.classList.add("hidden");
         });
-        document.querySelector(".winner-declaration").classList.remove("hidden");
-        return;
-      }
-      checkDraw();
+        document
+          .querySelector(".winner-declaration")
+          .classList.remove("hidden");
+        innerContainer.classList.add("hidden");
+        selectPlayer.classList.add("hidden");
+      } else checkDraw();
     }
 
     //Computer  Turn
@@ -219,6 +205,7 @@ blocks.addEventListener("click", function (e) {
       arreyOccupiedByCross = Array.from(occupiedByCross);
 
       if (arreyOccupiedByCross.length >= 3) {
+        checkDraw();
         const sortedArreyOccupiedByCross = arreyOccupiedByCross.sort();
         let arr = sortedArreyOccupiedByCross;
         let sortedArreydaSet = new Set(arr);
@@ -230,9 +217,13 @@ blocks.addEventListener("click", function (e) {
           document
             .querySelector(".losing-declaration")
             .classList.remove("hidden");
-          return;
-        }
+          selectPlayer.classList.add("hidden");
+        } else checkDraw();
       }
     }
   }
 });
+
+function refreshPage() {
+  window.location.reload();
+}

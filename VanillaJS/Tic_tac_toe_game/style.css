@@ -5,15 +5,23 @@
   flex-wrap: wrap;
 }
 .game-heading {
-  font-size: 60px;
+  font-size: 5rem;
   text-align: center;
 }
 
+.no-result {
+  color: #9352cf;
+  font-size: 5rem;
+}
 .select-player {
   color: #9352cf;
-  font-size: 60px;
+  font-size: 3rem;
   text-align: center;
   margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .inner-container {
@@ -25,8 +33,12 @@
 .inner-container:hover {
   cursor: pointer;
 }
-.select-player-circle,.select-player-cross {
+.select-player-circle,
+.select-player-cross {
   font-size: 50px;
+}
+.no-result {
+  text-align: center;
 }
 
 .select-player-cross:hover {
@@ -37,40 +49,77 @@
   cursor: pointer;
 }
 
-.box-1,.box-2,.box-4,.box-5{
+.box-1,
+.box-2,
+.box-4,
+.box-5 {
   border-right: 5px solid black;
   border-bottom: 5px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.box-7,.box-8{
+.box-7,
+.box-8 {
   border-right: 5px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.box-3,.box-6 {
+.box-3,
+.box-6 {
   border-bottom: 5px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-
 
 .fa-times {
-  font-size: 110px;
-  text-align: center;
-  padding-left: 20px;
-  padding-top: 5px;
+  font-size: 100px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .fa-circle {
-  font-size: 100px;
-  padding-left: 8px;
-  padding-top: 10px;
+  font-size: 90px;
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
-.winner-declaration,.losing-declaration {
+.winner-declaration,
+.losing-declaration {
   font-size: 70px;
+  text-align: center;
   color: #9352cf;
 }
-
+.icon-circle,
+.icon-cross {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconscontainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.reset-button {
+  font-size: 2rem;
+  height: auto;
+  width: auto;
+  background-color: #9352cf;
+  color: white;
+  border: 5px solid #9352cf;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+.reset-button:hover {
+  cursor: pointer;
+}

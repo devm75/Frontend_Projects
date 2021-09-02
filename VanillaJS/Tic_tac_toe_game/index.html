@@ -5,20 +5,27 @@
     <title>Tic Tac Toe</title>
     <script src="https://use.fontawesome.com/1f910ff797.js"></script>
     <link rel="stylesheet" href="style.css" />
-    
-   
 </head>
 
 <body>
     <div class="outer-container">
         <div class="game-heading">Tic Tac Toe</div>
+        <div class="no-result hidden">NO Result !! Try Once More<button onClick="refreshPage()"
+                class="reset-button">Restart</button></div>
         <div class="select-player">
-            <div class="no-result hidden">NO Result!! Try Once More</div>
-            Select Player <i class="select-player-cross fa fa-times"></i>
-            <i class="select-player-circle fa fa-circle"></i>
+
+            <div class="selectplayertext">Select Player</div>
+            <div class='iconscontainer'>
+                <div class="icon-cross"> <i class="select-player-cross fa fa-times"></i></div>
+                <div class="icon-circle">
+                    <i class="select-player-circle fa fa-circle"></i>
+                </div>
+            </div>
         </div>
-        <div class="winner-declaration hidden">You Have Won!</div>
-        <div class="losing-declaration hidden">You Lost !!</div>
+        <div class="winner-declaration hidden">You Have Won! <button onClick="refreshPage()"
+                class="reset-button">Restart</button></div>
+        <div class="losing-declaration hidden">You Lost !! <button onClick="refreshPage()"
+                class="reset-button">Restart</button></div>
         <div class="inner-container">
             <div class="box-1">
                 <i class="element hidden fa fa-circle fa fa-times"></i>
@@ -50,7 +57,7 @@
         </div>
     </div>
     <script src="script.js"></script>
-  
+
 </body>
 
 </html>
