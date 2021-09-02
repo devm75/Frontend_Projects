@@ -31,7 +31,7 @@
 
 @media only screen and (max-width: 880px) {
   .todoApp {
-    margin-left: 5%;
+    margin-left: 20vw;
   }
 }
 
@@ -48,8 +48,11 @@
   padding: 1rem;
   margin-bottom: 5rem;
 }
+.header-text{
+  display:inline;
+}
 .sun {
-  margin-left: 24rem;
+  margin-left: 17vw;
   cursor: pointer;
 }
 .moon {
