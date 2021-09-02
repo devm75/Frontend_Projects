@@ -11,28 +11,36 @@
 }
 .container {
   background-color: hsl(235, 21%, 11%);
-  height: calc(100vh - 15px);
+ min-height: 100vh;
   width: 100vw;
   position: relative;
 }
 .image {
   width: 100%;
+  height: 40vh;
 }
 
 .todoApp {
   width: fit-content;
   height: auto;
   position: absolute;
-  top:10%;
-  margin-left:30%;
-  margin-right:20%;
+  top: 35%;
+  margin-left: 30%;
+  margin-right: 20%;
 }
+
+@media only screen and (max-width: 680px) {
+  .todoApp {
+    margin-left: 5%;
+  }
+}
+
 .header {
   font-size: 3rem;
   color: white;
   text-align: center;
   font-weight: 700;
-  letter-spacing: 1rem;
+  letter-spacing: 0.3rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -57,14 +65,14 @@
   height: auto;
   border: 1px solid hsl(233, 7%, 24%);
   margin-bottom: 2rem;
-  background-color:  hsl(235, 24%, 19%);
+  background-color: hsl(235, 24%, 19%);
 }
 
 #input-text {
   color: rgb(209, 168, 168);
   background-color: hsl(235, 24%, 19%);
   border: none;
-  width:100%;
+  width: 100%;
   height: 4rem;
   font-size: 2rem;
   outline: none;
@@ -83,18 +91,18 @@
 .content {
   width: 100%;
   height: 3rem;
-  font-size: 1.4rem;
+  font-size: 2rem;
   color: rgb(209, 168, 168);
   background-color: hsl(235, 24%, 19%);
-  margin: auto;
+  margin-bottom: 0.5rem;
   box-sizing: content-box;
-  border-bottom: 1px solid hsla(240, 2%, 34%, 0.726);
+  border: 1px solid hsla(240, 2%, 34%, 0.726);
   align-content: center;
   text-align: start;
   padding-top: 1.5rem;
 }
 .footer {
-  font-size: 1rem;
+  font-size: 1.6rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -103,34 +111,32 @@
   color: white;
   padding: auto;
   height: 3rem;
+  margin-top: 2rem;
 }
-#itemsleft,
 #completed,
 #active,
 #clearcompleted,
 #all {
   cursor: pointer;
-  opacity:0.6;
-
+  opacity: 0.6;
 }
-#itemsleft:hover{
-  opacity:1;
-}
-
-#completed:hover{
-  opacity:1;
+#itemsleft:hover {
+  opacity: 1;
 }
 
-#active:hover{
-opacity:1;
+#completed:hover {
+  opacity: 1;
+}
 
+#active:hover {
+  opacity: 1;
 }
-#clearcompleted:hover{
-  opacity:1;
+#clearcompleted:hover {
+  opacity: 1;
 }
-#all:hover{
-  opacity:1;
+#all:hover {
+  opacity: 1;
 }
-.hide{
-  display:none;
+.hide {
+  display: none;
 }

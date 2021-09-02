@@ -1,5 +1,5 @@
-let count=0;
-let k=0;
+let count = 0;
+let k = 0;
 const radioMain = document.getElementById("radiomain");
 const checkuncheck = function () {
   document.getElementById("radiomain").checked = true;
@@ -27,38 +27,35 @@ radioMain.addEventListener("click", function () {
       `<div class="content active uncomplete"><input id="radio" type="radio"><span id="content-text">${todoitem}</span>
        </div>`
     );
-    k=   document.querySelectorAll('.uncomplete').length;
-    document.querySelector('#num').textContent= Number(k);
+  k = document.querySelectorAll('.uncomplete').length;
+  document.querySelector('#num').textContent = Number(k);
 
-  //--------  complemented elements let line passing through themselves------//
-  if(count>=1){
-    document.querySelectorAll('#radio').forEach(el=>el.addEventListener('click',function(){
-    el.parentElement.querySelector('#content-text').style.textDecorationLine ="line-through";
-    el.parentElement.classList.add('complete');
-    el.parentElement.classList.remove('active');
-    el.parentElement.classList.remove('uncomplete');
-  
-    //el.closest('#content').textContent.style.textDecortionLine="line-through";
-    k=   document.querySelectorAll('.uncomplete').length;
-    document.querySelector('#num').textContent= Number(k);
-    
+  //--------  complemented elements decorate by line-through------//
+
+
+  if (count >= 1) {
+    document.querySelectorAll('#radio').forEach(el => el.addEventListener('click', function () {
+      el.parentElement.querySelector('#content-text').style.textDecorationLine = "line-through";
+      el.parentElement.classList.add('complete');
+      el.parentElement.classList.remove('active');
+      el.parentElement.classList.remove('uncomplete');
+      k = document.querySelectorAll('.uncomplete').length;
+      document.querySelector('#num').textContent = Number(k);
+
 
 
     }));
-  
+
   }
 
-//---removing completed tasks----//
-document.querySelector('#clearcompleted').addEventListener('click',function(e){
-  document.querySelectorAll('.complete').forEach(el=>el.remove());
-})
+  //---removing completed tasks----//
 
-//----------items left-----------------//
- 
+  document.querySelector('#clearcompleted').addEventListener('click', function (e) {
+    document.querySelectorAll('.complete').forEach(el => el.remove());
+  })
 
+  //------theme oriented changes---------//
 
-
-//------theme oriented changes---------//
   if (document.querySelector(".sun").classList.contains("moon")) {
     document.querySelectorAll(".content").forEach((el) => {
       el.style.backgroundColor = "white";
@@ -68,9 +65,9 @@ document.querySelector('#clearcompleted').addEventListener('click',function(e){
 });
 
 //-----------Imlementing theme change -------------------//
+
 document.querySelector(".sun").addEventListener("click", function () {
   if (document.querySelector(".sun").classList.contains("moon")) {
-    // console.log('hi');
     document.querySelector(".container").style.backgroundColor =
       "rgb(22,23,34)";
     document.querySelector(".image").removeAttribute("src");
@@ -96,9 +93,9 @@ document.querySelector(".sun").addEventListener("click", function () {
     });
     return;
   }
-  // console.log("hi");
+
   const container = document.querySelector(".container");
-  // console.log(container);
+
   document.querySelector(".container").style.backgroundColor = "white";
   document.querySelector(".image").removeAttribute("src");
   document
@@ -108,7 +105,6 @@ document.querySelector(".sun").addEventListener("click", function () {
   document.querySelector(".sun").removeAttribute("src");
   document.querySelector(".sun").setAttribute("src", "images/icon-moon.svg");
   document.querySelector(".sun").classList.add("moon");
-
   document.getElementById("all").style.color = "black";
   document.getElementById("itemsleft").style.color = "black";
   document.getElementById("active").style.color = "black";
@@ -120,45 +116,37 @@ document.querySelector(".sun").addEventListener("click", function () {
     el.style.backgroundColor = "white";
     el.style.color = "black";
   });
-  //document.querySelector(".moon").classList.remove("sun");
-//--showing Items left------//
-
-  
-
 })
-
-
-
-
-
-
 
 //--Showing completed tasks-----//
-document.querySelector('#completed').addEventListener('click',function(e){
-document.querySelectorAll('.content').forEach(el=>{
-  el.classList.remove('hide');
-  if(el.classList.contains('uncomplete')){el.classList.add('hide');}
-})
+
+document.querySelector('#completed').addEventListener('click', function (e) {
+  document.querySelectorAll('.content').forEach(el => {
+    el.classList.remove('hide');
+    if (el.classList.contains('uncomplete')) { el.classList.add('hide'); }
+  })
 })
 
 
 //--Showing all tasks-------//
-document.querySelector('#all').addEventListener('click',function(e){
-  console.log('hello');
-  document.querySelectorAll('.content').forEach(el=>{
+
+document.querySelector('#all').addEventListener('click', function (e) {
+  document.querySelectorAll('.content').forEach(el => {
     el.classList.remove('hide');
   })
 
 });
 
-  
+
 //--showing Active items------//
-document.querySelector('#active').addEventListener('click',function(){
-  document.querySelectorAll('.content').forEach(el=>{
+
+document.querySelector('#active').addEventListener('click', function () {
+  document.querySelectorAll('.content').forEach(el => {
     el.classList.remove('hide');
-    if(el.classList.contains('complete')){
+    if (el.classList.contains('complete')) {
       el.classList.add('hide');
-    }})
+    }
+  })
 })
 
 
